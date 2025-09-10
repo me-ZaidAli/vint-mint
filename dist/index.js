@@ -13,14 +13,14 @@ async function main() {
         const embeds = products.map((product) => createEmbed(product));
         const channel = await client.channels.fetch(process.env.CHANNEL_ID);
         if (!channel || !channel.isTextBased()) {
-            console.error("❌ Invalid channel ID or not a text channel");
+            console.error("Invalid channel ID or not a text channel");
             return;
         }
         for (let i = 0; i < embeds.length; i += 10) {
             const chunk = embeds.slice(i, i + 10);
             await channel.send({ embeds: chunk });
         }
-        console.log(`📤 Sent ${embeds.length} embeds in chunks of 10`);
+        console.log(`Sent ${embeds.length} embeds in chunks of 10`);
     });
     await client.login(process.env.DISCORD_TOKEN);
 }

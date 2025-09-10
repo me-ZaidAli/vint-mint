@@ -18,7 +18,7 @@ async function main() {
 
         const channel = await client.channels.fetch(process.env.CHANNEL_ID!);
         if (!channel || !channel.isTextBased()) {
-            console.error("❌ Invalid channel ID or not a text channel");
+            console.error("Invalid channel ID or not a text channel");
             return;
         }
 
@@ -27,7 +27,7 @@ async function main() {
             await (channel as TextChannel).send({ embeds: chunk });
         }
 
-        console.log(`📤 Sent ${embeds.length} embeds in chunks of 10`);
+        console.log(`Sent ${embeds.length} embeds in chunks of 10`);
     });
 
     await client.login(process.env.DISCORD_TOKEN);

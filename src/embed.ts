@@ -24,7 +24,14 @@ const createEmbed = (data: VintedProduct ) => {
 			{
 				name: 'Price',
 				value: data.price,
+				inline: true,
 			},
+			{
+				name: 'Likes',
+				value: `${data.likes}`,
+				inline: true,
+			},
+
 			{
 				name: '\u200b',
 				value: '\u200b',

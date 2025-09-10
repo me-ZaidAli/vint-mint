@@ -9,6 +9,12 @@ const createEmbed = (data) => {
             {
                 name: 'Price',
                 value: data.price,
+                inline: true,
+            },
+            {
+                name: 'Likes',
+                value: `${data.likes}`,
+                inline: true,
             },
             {
                 name: '\u200b',
