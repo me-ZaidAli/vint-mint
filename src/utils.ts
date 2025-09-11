@@ -1,8 +1,8 @@
-const { fetchVintedCatalogue } = require("./api/fetch-product-catalog");
-const jsdom = require("jsdom");
+import {fetchVintedCatalogue} from "./api/fetch-product-catalog.js";
+import jsdom from "jsdom";
 const { JSDOM } = jsdom;
 
-async function extractProducts() {
+export async function extractProducts() {
   try {
     let products: {
       id: number;
@@ -64,7 +64,7 @@ async function extractProducts() {
   }
 }
 
-function parseProductInfo(altText: string) {
+export function parseProductInfo(altText: string) {
   const info: any = {};
 
   // Extract product name (usually before the first comma)
@@ -96,7 +96,7 @@ function parseProductInfo(altText: string) {
   return info;
 }
 
-function displayProducts(products: any[]) {
+export function displayProducts(products: any[]) {
   console.log("🎯 EXTRACTED PRODUCTS FROM VINTED UK HOMEPAGE");
   console.log("=============================================\n");
 
@@ -125,8 +125,3 @@ function displayProducts(products: any[]) {
   );
 }
 
-module.exports = {
-  extractProducts,
-  parseProductInfo,
-  displayProducts,
-};

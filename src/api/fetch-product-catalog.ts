@@ -1,8 +1,8 @@
-const https = require("https");
-const zlib = require("zlib");
+import https from "https";
+import zlib from "zlib";
 
 
-async function fetchVintedCatalogue(): Promise<string> {
+export async function fetchVintedCatalogue(): Promise<string> {
   return new Promise((resolve, reject) => {
     const options = {
       hostname: "www.vinted.co.uk",
@@ -56,4 +56,3 @@ async function fetchVintedCatalogue(): Promise<string> {
   });
 }
 
-module.exports = { fetchVintedCatalogue };
